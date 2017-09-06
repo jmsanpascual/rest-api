@@ -1,0 +1,27 @@
+{
+  "name": "rest-api",
+  "version": "1.0.0",
+  "description": "A restful api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmsanpascual/rest-api.git"
+  },
+  "keywords": [
+    "rest",
+    "api"
+  ],
+  "author": "Julius Marvin San Pascual",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jmsanpascual/rest-api/issues"
+  },
+  "homepage": "https://github.com/jmsanpascual/rest-api#readme",
+  "dependencies": {
+    "angular": "^1.6.5",
+    "bootstrap": "^3.3.7"
+  }
+}

@@ -1,61 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
+      <meta charset="utf-8">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <title>Rest Api</title>
       <!-- Stylesheets -->
-        <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+      <!-- Custom Styles -->
+      <style>
+        .pokemon {
+          max-width: 75px;
+          height: 75px;
+          border: 1px solid white;
+        }
+      </style>
   </head>
   <body ng-app="restApi">
-      <!-- Begin Container -->
-    <div class="container" ng-controller="AppController as ac">
-        <!-- Begin Row -->
-            <div class="row">
-                <h1>Rest Api</h1><hr>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand">Rest Api</a>
+        </div>
+      </div>
+    </nav>
 
-                <div class="col-md-6">
-                    <h4>User List</h4><hr>
-                    <ul class="list-group">
-                      <li class="list-group-item" ng-repeat="person in ac.persons track by person.id">
-                        <span>{{ person.first_name + ' ' + person.last_name }}</span>
-                          <button class="btn btn-danger btn-xs pull-right" ng-click="ac.delete(person, $index)">
-                              <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                          </button>
-                          <button class="btn btn-primary btn-xs pull-right" ng-click="ac.view(person)">
-                              <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                          </button>
-                      </li>
-                    </ul>
-                </div>
-
-                <div class="col-md-6">
-                    <h4>User Form</h4><hr>
-                    <form>
-                        <input type="hidden" ng-model="ac.person.id">
-                      <div class="form-group">
-                        <label for="fistName">First Name</label>
-                        <input type="text" class="form-control" id="fistName" placeholder="Enter First Name" ng-model="ac.person.first_name">
-                      </div>
-                      <div class="form-group">
-                        <label for="lastName">Last Name</label>
-                        <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name" ng-model="ac.person.last_name">
-                      </div>
-                      <div class="form-group">
-                        <label for="contactNum">Contact No</label>
-                        <input type="text" class="form-control" id="contactNum" placeholder="Enter Contact Number" ng-model="ac.person.contact_number">
-                      </div>
-                      <button type="submit" class="btn btn-primary" ng-click="ac.saveOrUpdate(ac.person)">
-                          Submit
-                      </button>
-                    </form>
-                </div>
-
-            </div>
-            <!-- End Row -->
-    </div>
-    <!-- End Container -->
-
+    <div ui-view></div>
     <!-- Scripts -->
     <script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="app/user/user.factory.js"></script>
+    <script type="text/javascript" src="app/user/user.controller.js"></script>
+    <script type="text/javascript" src="app/user/missing-user/missing-user.controller.js"></script>
+    <script type="text/javascript" src="app/pokemon/pokemon.factory.js"></script>
+    <script type="text/javascript" src="app/profile/profile.controller.js"></script>
+    <script type="text/javascript" src="app/filters/capitalize.filter.js"></script>
     <script type="text/javascript" src="app/app.module.js"></script>
-    <script type="text/javascript" src="app/app.controller.js"></script>
   </body>
 </html>

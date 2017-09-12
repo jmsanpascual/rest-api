@@ -12,7 +12,8 @@ class Request implements ArrayAccess {
     // Gets the appropriate request values, then returns it
     private function getRequest($method)
     {
-        $contentType = getallheaders()['Content-Type'];
+        $contentType = isset(getallheaders()['Content-Type'])
+                ? getallheaders()['Content-Type'] : '';
         $request = [];
 
         switch ($method) {
